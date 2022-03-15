@@ -21,7 +21,7 @@ const Newticket = () =>{
   const [val,setVal] =useState([])
   const [user,setUser]=useState([])
 useEffect(()=>{
-	axios.get("http://localhost:8080/"+decoded._id)
+	axios.get("/"+decoded._id)
 	.then(res=>setUser(res.data[0]))
 },[])
  console.log(user.name)
@@ -30,7 +30,7 @@ useEffect(()=>{
   //   set(element.name)
   // }));
   useEffect(()=>{
-    axios.get("http://localhost:8080/newticket")
+    axios.get("/newticket")
     .then(res=>setVal(res.data))
 },[])
 
