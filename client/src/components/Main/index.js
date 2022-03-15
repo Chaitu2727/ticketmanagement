@@ -21,7 +21,7 @@ const Main = () => {
     console.log(decoded._id)
 const [user,setUser]=useState([])
 useEffect(()=>{
-	axios.get("http://localhost:8080/"+decoded._id)
+	axios.get("/"+decoded._id)
 	.then(res=>setUser(res.data[0]))
 },[])
  console.log(user.name)
@@ -29,7 +29,7 @@ useEffect(()=>{
  const [data, setData] = useState([]);
 
     const fetchInventory = () => {
-      axios.get("http://localhost:8080/mytickets/"+decoded._id)
+      axios.get("/mytickets/"+decoded._id)
       .then(res=>setData(res.data))
     }
 
@@ -47,7 +47,7 @@ data.forEach(element => {
 const [data1, setData1] = useState([]);
 
     const fetchInventory1 = () => {
-      axios.get("http://localhost:8080/myassignee/"+decoded._id)
+      axios.get("/myassignee/"+decoded._id)
       .then(res=>setData1(res.data))
     }
 
