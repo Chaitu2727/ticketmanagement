@@ -17,7 +17,7 @@ const [tickets,setTickets]=useState([])
 const [data, setData] = useState([]);
 
     const fetchInventory = () => {
-      axios.get("http://localhost:8080/myassignee/"+decoded._id)
+      axios.get("/myassignee/"+decoded._id)
       .then(res=>setData(res.data))
     }
 
@@ -44,7 +44,7 @@ console.log(data);
 
     
     const updateInventory = ({_id, newStatus}) => {
-        fetch("http://localhost:8080/myassignee/"+_id, {
+        fetch("/myassignee/"+_id, {
             method: "PATCH",
             body: JSON.stringify({
                 status: newStatus
