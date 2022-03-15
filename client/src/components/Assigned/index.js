@@ -10,10 +10,7 @@ const Assigned = () =>{
   localStorage.setItem('decoded',decoded)
  console.log(decoded._id)
 const [tickets,setTickets]=useState([])
-// useEffect(()=>{
-// axios.get("http://localhost:8080/mytickets/"+decoded._id)
-// .then(res=>setTickets(res.data))
-// },[])
+
 const [data, setData] = useState([]);
 
     const fetchInventory = () => {
