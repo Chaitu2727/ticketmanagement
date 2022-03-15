@@ -16,7 +16,7 @@ const Mytickets = () =>{
 const [data, setData] = useState([]);
 
     const fetchInventory = () => {
-      axios.get("http://localhost:8080/mytickets/"+decoded._id)
+      axios.get("/mytickets/"+decoded._id)
       .then(res=>setData(res.data))
     }
 
