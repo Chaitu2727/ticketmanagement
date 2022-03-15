@@ -59,7 +59,7 @@ console.log(val)
          if(name!=user.name){toast.warning("Name doesn't matched",{autoClose:1000})}
          else if(type=="" || type=="Open this select Type" || assignee=="" || assignee=="Select Assignee" || description==""){toast.warning("All feilds are Mandatory",{autoClose:1000})}
          else{
-          const postURL = "http://localhost:8080/newticket" //Our previously set up route in the backend
+          const postURL = "/newticket" //Our previously set up route in the backend
           axios.post(postURL,data)
           toast.success("Submitted Successfully")
           // fetch(postURL, {
