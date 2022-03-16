@@ -1,7 +1,7 @@
 import { Route, Routes, Navigate } from "react-router-dom";
 //import { useState,useEffect } from "react";
 
-// import Main from "./components/Main";
+// import Main from "./components/Main/index";
 // import Signup from "./components/Signup";
 // import Login from "./components/Login";
 import Main from "./components/Main"
@@ -10,6 +10,8 @@ import Login from "./components/Login";
 import Mytickets from "./components/Mytickets";
 import Assigned from "./components/Assigned";
 import Newticket from "./components/Newticket";
+import Chartone from "./components/Main/Chartone";
+import Charttwo from "./components/Main/Charttwo";
 // import jwtDecode from "jwt-decode";
 // import axios from "axios";
 
@@ -26,7 +28,12 @@ function App() {
 //  console.log(person.name)
 	return (
 		<Routes>
-			{user && <Route path="/" exact element={<Main />} />}
+			{user && 
+			<Route path="/home" exact element={<Main />} >
+				<Route path={`chartone`} exact element={<Chartone />} />
+				<Route path={`charttwo`} exact element={<Charttwo />} />
+			</Route>
+			}
 			<Route path="/signup" exact element={<Signup />} />
 			<Route path="/login" exact element={<Login />} />
 			<Route path="/" element={<Navigate replace to="/login" />} />
