@@ -69,7 +69,7 @@ const Main = () => {
 		
 	return (
 	 <>
-	   <div className="parent">
+	   <div className="poo">
 		<div className="left">
 		  <h2 className="align">Ticket Management</h2>		
 		  <MDBCardImage src={image} style={{ backgroundColor: 'white' }} fluid alt='...' />
