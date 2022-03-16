@@ -23,14 +23,14 @@ code {
     text-decoration: none
   }
   
-  .paa {
+  .poo {
     width: 100%;
     height: 100%;
     overflow: hidden;
     text-align: center;
   }
   
-  .paa .left {
+  .poo .left {
     background-color: #a247fc;
     float: left;
     height: 100vh;
@@ -39,7 +39,7 @@ code {
     color: #FDE8E8;
   }
   
-  .paa .left h3 {
+  .poo .left h3 {
     text-transform: uppercase;
     font-weight: normal;
     font-size: 18px;
@@ -49,14 +49,14 @@ code {
   
   
   
-  .paa .right {
+  .poo .right {
     float: left;
     width: calc(100% - 300px);
     height: 100%;
     padding: 60px 70px 20px 70px;
   }
   
-  .paa .right .container {
+  .poo .right .container {
     width: 100%;
     max-width: 500px;
     margin: 0 auto;
@@ -65,11 +65,11 @@ code {
   
   @media(max-width: 800px) {
     
-    .paa .left {
+    .poo .left {
       height: 575px
     }
     
-    .paa .right {
+    .poo .right {
       padding: 60px 20px 20px 20px 
     }    
     
@@ -77,24 +77,24 @@ code {
   
   @media(max-width: 640px) {
     
-    .paa .left,
-    .paa .right {
+    .poo .left,
+    .poo .right {
       width: calc(100% / 2)
     }
   }
   
   @media(max-width: 510px) {
-    .paa .left,
-    .paa .right {
+    .poo .left,
+    .poo .right {
       float: none;
       width: 100%;
 }
     
-    .paa .right {
+    .poo .right {
       padding: 60px 40px 30px 40px 
     }
     
-    .paa .left {
+    .poo .left {
       height: 100%
     }
 
