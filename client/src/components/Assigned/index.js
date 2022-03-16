@@ -81,7 +81,7 @@ console.log(data);
         <div className={styles.main_container}>
             <nav className={styles.navbar}>
 				
-				<Link to={`/`} className={styles.white_btn} style={{textDecoration:"none",textAlign:"center",color:"black"}}>
+				<Link to={`/home`} className={styles.white_btn} style={{textDecoration:"none",textAlign:"center",color:"black"}}>
 					Home
 				</Link>
 				<h1 style={{margin:"auto"}}>Tickets Assigned to Me</h1>
