@@ -1,4 +1,4 @@
-import { Link,  NavLink, Outlet } from 'react-router-dom';
+import { Link,  NavLink, Outlet , useNavigate } from 'react-router-dom';
 import jwtDecode from "jwt-decode";
 import { MDBCard, MDBCardBody, MDBCardTitle, MDBCardText, MDBCardImage, MDBBtn, MDBRipple } from 'mdb-react-ui-kit';
 import { useEffect, useState } from "react";
@@ -7,6 +7,8 @@ import image from "./image.png"
 import { Row , Col } from "react-bootstrap";
 
 const Main = () => {
+	
+	const navigate = useNavigate();
 
 	let decoded = jwtDecode(localStorage.getItem("token"))
 	localStorage.setItem('decoded',decoded)
@@ -35,7 +37,7 @@ const Main = () => {
 
 	const handleLogout = () => {
 		localStorage.removeItem("token");
-		window.location.reload();
+		navigate('/login');
 	};
 
 	const fetchInventory1 = () => {
@@ -83,7 +85,7 @@ const Main = () => {
 		 <br/><br/>
 		 <Link to={`/mytickets/`} ><MDBBtn style={{ backgroundColor: 'white' , borderRadius : "20px", color: 'black' ,  width: "150px", fontWeight: "bold" }}>My Tickets</MDBBtn></Link>
 		 <br/><br/>			
-		 <Link to={`/mytickets/`} ><MDBBtn style={{ backgroundColor: 'white' , borderRadius : "20px", color: 'black', width: "150px", fontWeight: "bold"  }}>Assigned to me</MDBBtn></Link>
+		 <Link to={`/myassignee/`} ><MDBBtn style={{ backgroundColor: 'white' , borderRadius : "20px", color: 'black', width: "150px", fontWeight: "bold"  }}>Assigned to me</MDBBtn></Link>
 		 <br/><br/>		  
      	</div>
         
