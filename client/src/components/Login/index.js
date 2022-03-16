@@ -17,7 +17,7 @@ const Login = () => {
 			const url = "/api/auth";
 			const { data: res } = await axios.post(url, data);
 			localStorage.setItem("token", res.data);
-			window.location = "/";
+			window.location = "/home";
 		} catch (error) {
 			if (
 				error.response &&
@@ -32,7 +32,7 @@ const Login = () => {
 	return (
 		<div className={styles.login_container}>
 			<div className={styles.login_form_container}>
-				<div className={styles.left}>
+				<div className={styles.low}>
 					<form className={styles.form_container} onSubmit={handleSubmit}>
 						<h1>Login to Your Account</h1>
 						<input
@@ -59,7 +59,7 @@ const Login = () => {
 						</button>
 					</form>
 				</div>
-				<div className={styles.right}>
+				<div className={styles.row}>
 					<h1>New Here ?</h1>
 					<Link to="/signup">
 						<button type="button" className={styles.white_btn}>
