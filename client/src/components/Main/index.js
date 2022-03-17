@@ -114,6 +114,7 @@ const Main = () => {
 		  <Outlet />
 		  	{/*  display the content in this page itself, instead of going to another path/page */}
 		  </div>
+		<Link to={`/login/`} ><MDBBtn className='logout' >Logout</MDBBtn></Link>
 		 </div>
 		</div>
      </>
