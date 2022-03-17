@@ -25,3 +25,30 @@
 	cursor: pointer;
 	margin-right: 20px;
 }
+@media only screen and (max-width: 425px) {
+  .navbar {
+    width: 250%;
+    height: 45px;
+    background-color: #a247fc;
+    display: flex;
+    align-items: center;
+    justify-content: space-between;
+  }
+  .navbar h1 {
+    color: white;
+    font-size: 15px;
+    margin: 0 auto;
+  }
+  .white_btn {
+    border: none;
+    outline: none;
+    padding: 8px 0;
+    background-color: white;
+    border-radius: 20px;
+    width: 70px;
+    font-weight: bold;
+    font-size: 14px;
+    cursor: pointer;
+    margin-right: 20px;
+  }
+}
