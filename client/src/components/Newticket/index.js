@@ -20,6 +20,7 @@ const Newticket = () =>{
     console.log(decoded._id)
   const [val,setVal] =useState([])
   const [user,setUser]=useState([])
+   const [data, setData] = useState({ name: "", type: "" ,assignee:"",description:""});
 useEffect(()=>{
 	axios.get("/"+decoded._id)
 	.then(res=>setUser(res.data[0]))
@@ -34,14 +35,34 @@ useEffect(()=>{
     .then(res=>setVal(res.data))
 },[])
 
-console.log(val)
+ const getName = async () => {
+    try {
+      const res = await fetch("/name/"+decoded._id , {
+        method : "GET",
+        headers : {
+          "Content-Type" : "application/json"
+        }
+      });    
+      const dat = await res.json();
+      const name = dat.name;
+      setData({ ...data , name });
+    } catch (error) {
+      console.log('error occured');
+    }
+}
+
+
+useEffect(()=>{
+  getName();
+},[])
+
   // console.log(val.at(1))
   //val.forEach((e)=>{console.log(e);})
 
 // const display=(e)=>(
 //   <option>{e}</option>
 // )
-  const [data, setData] = useState({ name: "", type: "" ,assignee:"",description:""});
+ 
         const handleChange = e => {
             const { name, value } = e.target;
             setData(prevState => ({
