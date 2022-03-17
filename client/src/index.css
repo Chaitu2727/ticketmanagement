@@ -149,3 +149,9 @@ code {
     box-shadow: 4px 4px 12px #c5c5c5,
                 -4px -4px 12px black;
    }
+*{
+  font-family:-apple-system, BlinkMacSystemFont, "Segoe UI", "Roboto", "Oxygen";
+}
+body{
+  background-color: #e0c2ff;
+}
