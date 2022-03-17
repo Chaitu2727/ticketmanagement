@@ -155,3 +155,36 @@ code {
 body{
   background-color: #e0c2ff;
 }
+.logout{
+
+  display: none;
+
+  background-color: #a247fc;
+
+  border-radius : 20px;
+
+  color: white;
+
+  width: 150px;
+
+  font-weight: bold;
+
+}
+
+
+
+@media(max-width: 510px) {
+
+   .logout{
+
+     display: block;
+
+     bottom: 0;
+
+     margin-left: auto;
+
+     margin-right: auto;
+
+   }
+
+}
