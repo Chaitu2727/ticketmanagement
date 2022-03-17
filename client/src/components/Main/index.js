@@ -90,7 +90,7 @@ const Main = () => {
      	</div>
         
         <div className="right">
-	      <button className="logbtn" onClick={handleLogout}>
+	      <button className="logbtn" style={{ backgroundColor: '#a247fc',color:"white" }} onClick={handleLogout}>
 			Logout
 		  </button>
 		
