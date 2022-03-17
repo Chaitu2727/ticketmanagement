@@ -87,9 +87,10 @@ app.get('/newticket',async (req, res) => {
   });
  // });
 
-
-
-
+app.get("/name/:id",async(req,res)=>{
+  const result=await User.findOne({_id:req.params.id})
+  res.send(result)
+})
 
 // app.get("/newticket", async(req,res)=>{
 //   try{
