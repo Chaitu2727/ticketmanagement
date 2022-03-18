@@ -19,15 +19,15 @@ Ticket/Incident management tool:
 5.	Users should be able to view the activity of the ticket which includes ticket status, activity time, the  respective user. Example: John changed the status to Completed on 21 Feb 2022 10:00 AM
 
 # Solution Provided
--For the purpose of SignIn/SignUp JWT is used.
--The token will be stored in local storage.
--For creating new Ticket the data shold be sent to the dataBase using post method.
--For viewing tickets created by user, get method along with filtering the tickets with the name equal to user name.
--For viewing tickets assigned to the user,get method along with filtering the tickets with the assignee is eual to user name. 
--To edit the status of assigned tickets patch method is used.
--For viewing the activity of user pie charts are shown in home page.
--when user gets logout the token in local storage will be removed.
--For more resposive application build for mobile screen resolution also.
+1.For the purpose of SignIn/SignUp JWT is used.
+2.The token will be stored in local storage.
+3.For creating new Ticket the data shold be sent to the dataBase using post method.
+4.For viewing tickets created by user, get method along with filtering the tickets with the name equal to user name.
+5.For viewing tickets assigned to the user,get method along with filtering the tickets with the assignee is eual to user name. 
+6.To edit the status of assigned tickets patch method is used.
+7.For viewing the activity of user pie charts are shown in home page.
+8.when user gets logout the token in local storage will be removed.
+9.For more resposive application build for mobile screen resolution also.
 
 # Dependendencies
 for front end:
