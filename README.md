@@ -29,6 +29,9 @@ Ticket/Incident management tool:
 8.when user gets logout the token in local storage will be removed.
 9.For more resposive application build for mobile screen resolution also.
 
+# Architecture
+![Capture](https://user-images.githubusercontent.com/94965596/159108848-90d092bc-3ce2-4808-b0b2-12810e4a4748.PNG)
+
 # Dependendencies
 for front end:
     "@testing-library/jest-dom": "^5.16.1",
