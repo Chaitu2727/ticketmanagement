@@ -9,23 +9,42 @@ const Mytickets = () =>{
   localStorage.setItem('decoded',decoded)
  console.log(decoded._id)
  
-// useEffect(()=>{
-// axios.get("http://localhost:8080/mytickets/"+decoded._id)
-// .then(res=>setTickets(res.data))
-// },[])
-const [data, setData] = useState([]);
 
+const [data, setData] = useState([]);
+const [values,setValues]=useState([])
     const fetchInventory = () => {
       axios.get("/mytickets/"+decoded._id)
-      .then(res=>setData(res.data))
+      .then(res=>{setData(res.data)
+    setValues(res.data)})
     }
 
     useEffect(() => {
         fetchInventory();
     }, []);
 
+const setfilter=(stat)=>{
+    if(stat!=""){
+  setValues( data.filter(val=>val.status==stat))
+    }
+    else{
+        setValues(data)
+    }
 
+}
 
+const sortbyDateNew=()=>{
+    setValues(data.slice().sort((a, b) => new Date(b.time) - new Date(a.time)));
+}
+const sortbyDateOld=()=>{
+    setValues(data.slice().sort((a, b) => new Date(b.time) - new Date(a.time)).reverse());
+}
+const sortbyDateMod=()=>{
+    const res=data.filter(a=>a.updatedAt!=null)
+    const res1=data.filter(a=>a.updatedAt==null)
+    
+    setValues([...res.slice().sort((a, b) => new Date(b.updatedAt) - new Date(a.updatedAt)),...res1.slice().sort((a, b) => new Date(b.time) - new Date(a.time))]);
+    //setValues(data.slice().sort((a, b) => a.updatedAt - b.updatedAt).reverse());
+}
     return (
         <div className={styles.main_container}>
             <nav className={styles.navbar}>
@@ -36,10 +55,30 @@ const [data, setData] = useState([]);
 				<h1 style={{margin:"auto"}}>Tickets Created By Me</h1>
 			
 			</nav>
-            {/* <Link to={`/`} style={{color:"white",textDecoration:"none",backgroundColor:"#535353"}}  >
-					Back
-				</Link>
-            <h3 className='container' style={{color:"white",textAlign:"center",backgroundColor:"#535353",padding:"10px"}}>Tickets Created By Me</h3> */}
+            <div class="dropdown">
+  <button class="btn btn-secondary dropdown-toggle" style={{backgroundColor:"#fc03df",float:"right",fontWeight:"bold"}} type="button" id="dropdownMenuButton1" data-bs-toggle="dropdown" aria-expanded="false">
+    Filter by Status
+  </button>
+  <ul className="dropdown-menu" aria-labelledby="dropdownMenuButton1">
+    <li><a className="dropdown-item" onClick={() => setfilter("")}>All</a></li>
+    <li><a className="dropdown-item" onClick={() => setfilter("assigned")}>Assigned</a></li>
+    <li><a className="dropdown-item" onClick={() => setfilter("in-progress")}>In-Progress</a></li>
+    <li><a className="dropdown-item" onClick={() => setfilter("completed")}>completed</a></li>
+
+  </ul>
+
+  <button class="btn btn-secondary dropdown-toggle" style={{backgroundColor:"#fc03df",float:"right",fontWeight:"bold"}} type="button" id="dropdownMenuButton1" data-bs-toggle="dropdown" aria-expanded="false">
+    Sort By Date
+  </button>
+  <ul className="dropdown-menu" aria-labelledby="dropdownMenuButton1">
+    <li><a className="dropdown-item" onClick={() => sortbyDateNew()}>Newest First</a></li>
+    <li><a className="dropdown-item" onClick={() => sortbyDateOld()}>Oldest First</a></li>
+
+    <li><a className="dropdown-item" onClick={() => sortbyDateMod()}>Latest Modified</a></li>
+    
+
+  </ul>
+</div>
             <table className='table table-bordered'>
                 <thead>
                 <tr>
@@ -54,7 +93,7 @@ const [data, setData] = useState([]);
                 </thead>
                 <tbody>
                 {
-                    data.map((item) => (
+                    values.map((item) => (
                         <tr key={item._id}>
                             <td>{item.name}</td>
                             <td>{item.type}</td>
